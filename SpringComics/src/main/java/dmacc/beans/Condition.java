@@ -1,6 +1,5 @@
 package dmacc.beans;
 
-import java.util.Date;
 
 import javax.persistence.Embeddable;
 

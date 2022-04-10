@@ -3,14 +3,13 @@ package dmacc.beans;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 // @author AlSnyder - asnyder7
 
 @Entity
-@Table(name="my_spring_comics")
 public class Comic {
 	@Id
 	@GeneratedValue

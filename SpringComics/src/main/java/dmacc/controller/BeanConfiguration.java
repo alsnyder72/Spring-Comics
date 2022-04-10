@@ -29,13 +29,13 @@ public class BeanConfiguration {
 	
 	@Bean
 	public StorageInfo storageInfo() {
-		StorageInfo bean = new StorageInfo("M-A-01", false, "01-01-2020");
+		StorageInfo bean = new StorageInfo("M-A-01", false, "2020-01-01");
 		return bean;
 	}
 	
 	@Bean
 	public Condition condition() {
-		Condition bean = new Condition(4.0, "2020-01-01" );
+		Condition bean = new Condition(6.0, "2020-01-01" );
 		return bean;
 	}
 }

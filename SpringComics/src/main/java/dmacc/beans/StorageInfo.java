@@ -1,7 +1,5 @@
 package dmacc.beans;
 
-import java.util.Date;
-
 import javax.persistence.Embeddable;
 
 
@@ -14,7 +12,7 @@ public class StorageInfo {
 	public StorageInfo() {
 		super();
 		this.slabbed = false;
-		this.lastBoarded = "01-01-2020";		
+		this.lastBoarded = "2020-01-01";		
 	}
 
 	public StorageInfo(String locationId, Boolean slabbed, String lastBoarded) {
