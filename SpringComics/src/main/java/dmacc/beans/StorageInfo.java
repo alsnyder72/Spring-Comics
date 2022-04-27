@@ -1,9 +1,6 @@
 package dmacc.beans;
 
-import javax.persistence.Embeddable;
 
-
-@Embeddable
 public class StorageInfo {
 	private String locationId;
 	private Boolean slabbed;

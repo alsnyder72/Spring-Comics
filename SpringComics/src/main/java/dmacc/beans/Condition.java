@@ -1,9 +1,10 @@
 package dmacc.beans;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-import javax.persistence.Embeddable;
-
-@Embeddable
+@Data
+@AllArgsConstructor
 public class Condition {
 	
 	private double condition;
@@ -14,6 +15,7 @@ public class Condition {
 		this.dateGraded = "2020-01-01";
 	}
 
+	/*
 	public Condition(double condition, String dateGraded) {
 		super();
 		this.condition = condition;
@@ -40,6 +42,6 @@ public class Condition {
 	public String toString() {
 		return "Condition [condition=" + condition + ", dateGraded=" + dateGraded + "]";
 	}
-		
+	*/	
 
 }

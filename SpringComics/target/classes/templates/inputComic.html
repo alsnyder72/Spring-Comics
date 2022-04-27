@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Comic</title>
+</head>
+<body>
+	<form th:object="${newComic}" th:action="@{/inputComic}" method='POST'>
+		Publisher: <input name="publisher" size="20" th:field="*{publisher}"> <br />
+		Title: <input name="title" size="50" th:field="*{title}"><br /> 
+		Volume: <input name="volume" size="10" th:field="*{volume}"><br /> 
+		Issue: <input name="issue" size="10" th:field="*{issue}"><br /><br /> 
+		Condition Code: <input name="condition.conditionCode" size="20" th:field="*{condition.conditionCode}"><br /> 
+		Date Graded:<input name="condition.dateGraded" size="20" th:field="*{condition.dateGraded}"><br /><br />
+		Location Code: <input name="location.locationId" size="20" th:field="*{location.locationId}"><br /> 
+		Raw or Slabbed: <input name="location.slabbed" size="20" th:field="*{location.slabbed}"><br />
+		Bagged and Boarded: <input name="location.boarded" size="20" th:field="*{location.boarded}"><br />
+		Date Bagged:<input name="location.bagged" size="20" th:field="*{location.bagged}"><br /> 
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all Contacts</a>
+</body>
+</html>

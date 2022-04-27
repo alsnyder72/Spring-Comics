@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View All Comics List</title>
+</head>
+<body>
+	<h1>View All Comics List</h1>
+	<form th:object="${newComic}" th:action="@{/update/{comicId}(id=${newComic.custId})}" method=POST>
+		<table>
+			<tr th:each="currentComic : ${comic}">
+			  <td th:text=${currentComic.comicId}/>
+			  	<td th:text=${currentComic.publisher}/>
+			  	<td th:text=${currentComic.title}/>
+			  	<td th:text=${currentComic.volume}/>
+			  	<td th:text=${currentComic.issue}/>
+			  	<td th:text=${currentComic.condition.condition}/>
+			  	<td th:text=${currentComic.condition.dateGraded}/>
+			  	<td th:text=${currentComic.storage.locationId}/>
+			  	<td th:text=${currentComic.storage.slabbed}/>
+			  	<td th:text=${currentComic.storage.lastBoarded}/>
+			  	<td><a href="@{/edit/{comicId}(id=${currentComic.comicId})}">Edit</a> </td>
+			  	<td><a href="@{/delete/{comicId}(id=${currentComic.comicId})}">Delete</a> </td>
+			</tr>  
+		</table>
+	</form>
+	<a href="../inputComic">Add a new Comic</a>
+	
+	<a href="../index">Home Page</a>
+</body>
+</html>

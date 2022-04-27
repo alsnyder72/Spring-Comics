@@ -12,23 +12,29 @@ import org.springframework.context.support.AbstractApplicationContext;
 
 import dmacc.beans.Comic;
 import dmacc.beans.Condition;
-import dmacc.beans.CustomerInfo;
 import dmacc.beans.StorageInfo;
+import dmacc.beans.Customer;
+import dmacc.beans.Address;
 import dmacc.controller.BeanConfiguration;
 import dmacc.repository.ComicsRepository;
+import dmacc.repository.CustomerRepository;
 
 
 @SpringBootApplication
-public class SpringComicsApplication implements CommandLineRunner{
+public class SpringComicsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringComicsApplication.class, args);
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
-		Comic c = appContext.getBean("comic", Comic.class);
-		System.out.println(c.toString());
+		// ApplicationContext appContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
+		//Comic co = appContext.getBean("comic", Comic.class);
+		//System.out.println(co.toString());
 	}
 	
+	/*
 	@Autowired
-	ComicsRepository repo;
+	ComicsRepository comicRepo;
+	
+	@Autowired
+	CustomerRepository customerRepo;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -39,7 +45,7 @@ public class SpringComicsApplication implements CommandLineRunner{
 		//Using an existing bean
 		Comic c = appContext.getBean("comic", Comic.class);
 		c.setPublisher("Marvel");
-		repo.save(c);
+		comicRepo.save(c);
 		
 		//Creating a bean to use – not managed by Spring	
 		Comic d = new Comic("Marvel", "Ironman", 1, 1);
@@ -47,20 +53,21 @@ public class SpringComicsApplication implements CommandLineRunner{
 		StorageInfo si = new StorageInfo("D-A-01", false, "2022-03-15");
 		d.setStorage(si);
 		
-		CustomerInfo ci = new CustomerInfo("Sandra Boynton", "123 Main Street", "Des Moines", "IA");
-		d.setCustomerInfo(ci);
-		
 		Condition cn = new Condition(4.5, "2022-03-15");
 		d.setCondition(cn);
-		repo.save(d);
+		comicRepo.save(d);
 			
-		List<Comic> allMyComics = repo.findAll();
+		List<Comic> allMyComics = comicRepo.findAll();
 		for(Comic book: allMyComics) {
 			System.out.println(book.toString());
 		}
 		//closes the ApplicationContext resource leak - not imperative to add but nice to clean it up.	
 		((AbstractApplicationContext) appContext).close();
 	}
+	
+	*/
+
+
 	
 }
 

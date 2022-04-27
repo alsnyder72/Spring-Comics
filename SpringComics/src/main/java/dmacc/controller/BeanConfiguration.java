@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import dmacc.beans.Comic;
 import dmacc.beans.Condition;
-import dmacc.beans.CustomerInfo;
+import dmacc.beans.Address;
 import dmacc.beans.StorageInfo;
 
 @Configuration
@@ -22,8 +22,8 @@ public class BeanConfiguration {
 	}
 	
 	@Bean
-	public CustomerInfo customerInfo() {
-		CustomerInfo bean = new CustomerInfo("John Smith", "123 Main St", "Metroplolis", "NY");
+	public Address customerInfo() {
+		Address bean = new Address("123 Main St", "Metroplolis", "NY");
 		return bean;
 	}
 	

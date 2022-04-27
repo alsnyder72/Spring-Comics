@@ -4,24 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.Data;
 
 // @author AlSnyder - asnyder7
 
+@Data
 @Entity
 public class Comic {
 	@Id
 	@GeneratedValue
-	private long id;
+	private long ComicId;
 	private String publisher;
 	private String title;
 	private int volume;
 	private int issue;
 	@Autowired
 	private Condition condition;
-	@Autowired
-	private CustomerInfo customerInfo;
 	@Autowired
 	private StorageInfo storage;
 	
@@ -32,6 +32,7 @@ public class Comic {
 		this.publisher = "Marvel";
 	}
 
+	/*
 	public Comic(String title) {
 		super();
 		this.title = title;
@@ -55,7 +56,7 @@ public class Comic {
 
 	public Comic(long id, String publisher, String title, int volume, int issue) {
 		super();
-		this.id = id;
+		this.ComicId = id;
 		this.publisher = publisher;
 		this.title = title;
 		this.volume = volume;
@@ -63,11 +64,11 @@ public class Comic {
 	}
 
 	public long getId() {
-		return id;
+		return ComicId;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.ComicId = id;
 	}
 
 	public String getPublisher() {
@@ -102,6 +103,8 @@ public class Comic {
 		this.issue = issue;
 	}
 	
+	*/
+	
 	public Condition getCondition() {
 		return condition;
 	}
@@ -111,14 +114,6 @@ public class Comic {
 	}
 
 	
-	public CustomerInfo getCustomerInfo() {
-		return customerInfo;
-	}
-
-	public void setCustomerInfo(CustomerInfo customerInfo) {
-		this.customerInfo = customerInfo;
-	}
-
 	public StorageInfo getStorage() {
 		return storage;
 	}
@@ -127,17 +122,13 @@ public class Comic {
 		this.storage = storage;
 	}
 
+	/*
 	@Override
 	public String toString() {
-		return "Comic [id=" + id + ", publisher=" + publisher + ", title=" + title + ", volume=" + volume + ", issue="
-				+ issue + ", condition=" + condition + ", customerInfo=" + customerInfo + ", storage=" + storage + "]";
+		return "Comic [id=" + ComicId + ", publisher=" + publisher + ", title=" + title + ", volume=" + volume + ", issue="
+				+ issue + ", condition=" + condition + ", storage=" + storage + "]";
 	}
 
-
-
-
-
-	
-	
+	*/
 	
 }
