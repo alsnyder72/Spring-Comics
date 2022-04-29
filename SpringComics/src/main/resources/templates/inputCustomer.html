@@ -3,6 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert New Customer</title>
+	<link rel="stylesheet" th:href="@{/static/css/comicStyle.css}" media="all"/>
+<script>
+	function checkForm(form)  //validate if alphanumeric
+	{
+		// regular expression to match only alphanumeric characters and spaces
+		  var re = /^[\w ]+$/;
+	  // validation fails if the input is blank
+	  if(form.inputfield.value == "") {
+	    alert("Error: Input is empty!");
+	    form.inputfield.focus();
+	    return false;
+	  }	// validation fails if the input doesn't match our regular expression
+	  else if(!re.test(form.inputfield.value)) {
+	    alert("Error: Input contains invalid characters!");
+	    form.inputfield.focus();
+	    return false;
+	  }
+	
+	  // validation was successful
+	  return true;
+	}
+</script>
 </head>
 <body>
 	<form th:object="${newCustomer}" th:action="@{/inputCustomer}" method='POST'>

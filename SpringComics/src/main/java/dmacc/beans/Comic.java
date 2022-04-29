@@ -6,11 +6,13 @@ import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 // @author AlSnyder - asnyder7
 
 @Data
+@AllArgsConstructor
 @Entity
 public class Comic {
 	@Id
